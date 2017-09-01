@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="lemuel.charles.charl.lemutask">
+
+    <application
+
+
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Tab_todo"
+            android:label="@string/title_activity_tab_todo"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value=".MainActivity" />
+
+        <activity
+            android:name=".todo_input"
+            android:label="Add new task" />
+
+        <receiver android:name=".Todo_alarm" />
+
+        <service
+            android:name=".ringservice"
+            android:enabled="true" />
+
+        <activity
+            android:name=".Classes"
+            android:label="@string/title_activity_classes"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity android:name=".classes_add" />
+        <activity
+            android:name=".assignment_main"
+            android:label="@string/title_activity_assignment_main"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".assignment_add_input"
+            android:label="Add Assignment" />
+        <activity
+            android:name=".project"
+            android:label="New Project" />
+        <activity
+            android:name=".project_main"
+            android:label="@string/title_activity_project_main"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".Project_view"
+            android:label="View Project">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".project_main" />
+        </activity>
+        <activity
+            android:name=".Contacts"
+            android:label="@string/title_activity_contacts"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity android:name=".Contacts_add"
+            android:label="Add Contact"
+            >
+
+
+        </activity>
+    </application>
+
+</manifest>

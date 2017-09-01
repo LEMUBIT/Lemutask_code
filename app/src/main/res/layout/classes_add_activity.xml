@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:paddingBottom="70dp"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="10dp"
+    >
+   <!--be careful how you arrange or position the xml code of the
+   views because they affect the navigation of users from view to view
+   -->
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/coursew"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/creditw"
+        android:layout_alignParentStart="true"
+
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:hint="Title of course"
+            android:paddingBottom="20dp"
+            android:textSize="20sp"
+            android:ems="10"
+            android:id="@+id/classTitleinput"
+            android:layout_above="@+id/creditUnitInput"
+            android:layout_alignParentStart="true"
+             />
+    </android.support.design.widget.TextInputLayout>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/creditw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/codew"
+        android:layout_alignParentStart="true"
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+
+            android:textSize="20sp"
+            android:hint="Course credit unit"
+            android:id="@+id/creditUnitInput"
+
+            android:paddingBottom="20dp"
+            android:layout_above="@+id/codeInput"
+            android:layout_alignParentStart="true" />
+
+    </android.support.design.widget.TextInputLayout>
+
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/codew"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/venuew"
+
+        android:layout_alignParentStart="true"
+        >
+    <EditText
+
+        android:hint="Course code of course"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textSize="20sp"
+        android:paddingBottom="20dp"
+
+        android:id="@+id/codeInput"
+
+        android:layout_above="@+id/venuew"
+
+        android:layout_alignParentStart="true" />
+
+</android.support.design.widget.TextInputLayout>
+    <HorizontalScrollView
+android:layout_width="match_parent"
+    android:id="@+id/lecturer_inputt"
+android:layout_height="wrap_content"
+    android:layout_above="@+id/startclass"
+    android:layout_alignParentStart="true"
+        android:paddingBottom="20dp"
+    android:layout_alignParentEnd="true"
+    >
+    <AutoCompleteTextView
+        android:hint="Lecturer(s) of course"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="3"
+        android:textSize="20sp"
+        android:id="@+id/lecturer_inputtx"
+        android:layout_above="@+id/startclass"
+
+
+         />
+</HorizontalScrollView>
+
+
+
+
+
+
+
+    <TextView
+        android:text="8:00 AM"
+        android:textColor="@color/colorPrimary"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:textSize="20sp"
+        android:gravity="center_vertical"
+
+        android:onClick="showTimePickerDialog"
+        android:id="@+id/startclass"
+
+        android:paddingBottom="20dp"
+        android:layout_above="@+id/On"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="TO"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:textSize="20sp"
+        android:paddingBottom="20dp"
+        android:gravity="center"
+        android:id="@+id/to"
+        android:layout_below="@+id/lecturer_inputt"
+        android:layout_toEndOf="@+id/startclass" />
+
+    <TextView
+        android:text="10:00 AM"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        android:paddingBottom="20dp"
+        android:gravity="center"
+        android:onClick="showTimePickerDialogto"
+        android:id="@+id/endclass"
+
+        android:layout_below="@+id/lecturer_inputt"
+        android:layout_toEndOf="@+id/to" />
+    <TextView
+        android:text="ON:"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:id="@+id/On"
+        android:layout_alignTop="@+id/spinner"
+        android:layout_toStartOf="@+id/spinner" />
+
+    <Spinner
+        android:layout_width="250dp"
+        android:layout_height="45dp"
+        android:paddingLeft="15dp"
+        android:id="@+id/spinner"
+
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="405dp"
+     />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:id="@+id/venuew"
+        android:layout_height="wrap_content"
+
+
+        android:layout_above="@+id/lecturer_inputt"
+        android:layout_alignParentStart="true">
+
+    <EditText
+        android:hint="Venue of class"
+
+        android:textSize="20sp"
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content"
+        android:id="@+id/venuInput"
+        android:paddingBottom="20dp"
+        android:layout_above="@+id/lecturer_inputt"
+        android:layout_centerVertical="true"
+        android:layout_alignParentStart="true" />
+
+</HorizontalScrollView>
+
+
+</RelativeLayout>
+
+</ScrollView>

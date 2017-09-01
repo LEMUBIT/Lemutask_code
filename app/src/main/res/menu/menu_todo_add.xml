@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="lemuel.charles.charl.lemutask.Tab_todo">
+
+    <item
+        android:id="@+id/cancel"
+        android:orderInCategory="100"
+        android:title="Cancel"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/save"
+        android:orderInCategory="100"
+        android:title="Save"
+        app:showAsAction="always" />
+
+
+</menu>

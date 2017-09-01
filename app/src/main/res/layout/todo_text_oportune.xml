@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF9F9F9"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    >
+
+    <!--parent top-top of relative layout, start to the left...-->
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:hint="ID"
+
+        android:id="@+id/txtid"
+        android:ellipsize="marquee"
+        android:visibility="invisible"
+        android:maxLines="1"
+        android:textStyle="normal|bold|italic"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <CheckBox
+        android:text=""
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/checkBoxop"
+        android:layout_alignBaseline="@+id/dateop"
+        android:layout_alignBottom="@+id/dateop"
+        android:layout_alignParentStart="true"
+        android:focusable="false" />
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Note title"
+        android:textSize="13sp"
+        android:paddingLeft="10dp"
+        android:id="@+id/txtTitleop"
+        android:ellipsize="marquee"
+        android:maxLines="2"
+        android:textStyle="normal|bold|italic"
+        android:layout_alignBaseline="@+id/checkBoxop"
+        android:layout_alignBottom="@+id/checkBoxop"
+        android:layout_toEndOf="@+id/checkBoxop"
+        android:layout_marginStart="11dp" />
+
+    <TextView
+        android:text="Date/Date/Date"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/dateop"
+        android:textSize="15sp"
+        android:textColor="@color/colorPrimary"
+        android:layout_alignBaseline="@+id/txtid"
+        android:layout_alignBottom="@+id/txtid"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>

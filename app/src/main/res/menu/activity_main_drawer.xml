@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/homez"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Dashboard"
+            ></item>
+        <item android:id="@+id/clas"
+            android:icon="@mipmap/ic_class_black_24dp"
+            android:title="My Classes"
+            ></item>
+        <item android:id="@+id/todo"
+            android:icon="@drawable/ic_access_time_black_24dp"
+            android:title="To-Do List"
+            ></item>
+        <item android:id="@+id/hw"
+            android:icon="@drawable/ic_assignment_black_24dp"
+            android:title="Assignments"
+            ></item>
+        <item android:id="@+id/project"
+            android:title="Projects"
+            android:icon="@drawable/ic_work_black_24dp"
+            ></item>
+
+        <item android:id="@+id/contacts"
+            android:title="Contacts"
+            android:icon="@drawable/ic_contacts_black_24dp"
+            ></item>
+      <!--  <item android:id="@+id/goals"
+            android:title="Set Goals"
+            android:icon="@drawable/ic_check_circle_black_24dp"
+            ></item>
+-->
+
+    </group>
+
+    <!--<item android:title="Communicate">-->
+        <!--<menu>-->
+            <!--<item-->
+                <!--android:id="@+id/nav_share"-->
+                <!--android:icon="@drawable/ic_menu_share"-->
+                <!--android:title="Share" />-->
+        <!--</menu>-->
+    <!--</item>-->
+
+</menu>

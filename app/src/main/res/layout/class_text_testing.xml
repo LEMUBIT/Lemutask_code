@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF9F9F9"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+    <!--parent top-top of relative layout, start to the left...-->
+
+    <TextView
+        android:text=""
+        android:hint="End time"
+        android:paddingLeft="10dp"
+        android:textSize="15sp"
+        android:textColor="@color/fromtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txclassTIme"
+        android:layout_toStartOf="@+id/homworkid"
+        android:layout_alignBottom="@+id/txclassTitlemain"
+        android:layout_alignParentTop="true"
+        android:clickable="true" />
+
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:hint="ID"
+        android:id="@+id/homworkid"
+        android:ellipsize="marquee"
+        android:visibility="invisible"
+        android:maxLines="1"
+        android:textStyle="normal|bold|italic"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="10dp"
+        android:layout_height="55dp"
+        android:id="@+id/noteicimage"
+
+        android:background="@color/colorAccent1"
+        android:layout_alignParentTop="true"
+        />
+
+
+
+    <TextView
+        android:text="id"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/txclassTitlemain"
+        android:layout_marginStart="11dp"
+        android:id="@+id/class_id" />
+
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Note title"
+            android:paddingLeft="10dp"
+            android:textSize="18sp"
+            android:id="@+id/txclassTitlemain"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textStyle="normal|bold|italic"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/noteicimage"
+            android:clickable="true" />
+
+</RelativeLayout>

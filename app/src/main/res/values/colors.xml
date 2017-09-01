@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#673AB7</color>
+    <color name="colorPrimaryDark">#4527A0</color>
+    <color name="colorAccent">#FFFFBB33</color>
+<color name="colortext">#7b7b80</color>
+
+
+
+
+
+    <color name="colorAccent1">#C51162</color>
+    <color name="textAccent">#dc3210</color>
+    <color name="colorAccent3">#04beb2</color>
+
+
+    <color name="colordone">#e6e4e7</color>
+    <color name="colorduedate">#d9ac09</color>
+    <color name="fromtext">#12c708</color>
+
+</resources>

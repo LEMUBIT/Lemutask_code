@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/contacts_add_activity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="lemuel.charles.charl.lemutask.Contacts_add">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Name"
+        android:textSize="20sp"
+        android:ems="10"
+        android:id="@+id/c_name"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Surname"
+        android:textSize="20sp"
+        android:ems="10"
+        android:layout_below="@+id/c_name"
+        android:layout_alignParentStart="true"
+        android:id="@+id/c_surname" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Nickname"
+        android:textSize="20sp"
+        android:ems="10"
+        android:layout_below="@+id/c_surname"
+        android:layout_alignParentStart="true"
+        android:id="@+id/c_nickname" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:hint="Email"
+        android:textSize="20sp"
+        android:layout_below="@+id/c_nickname"
+        android:layout_alignParentStart="true"
+        android:id="@+id/c_email" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:hint="Phone Number"
+        android:textSize="20sp"
+        android:layout_below="@+id/c_email"
+        android:layout_alignParentStart="true"
+        android:id="@+id/c_num" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Facebook Contact"
+        android:ems="10"
+        android:textSize="20sp"
+        android:id="@+id/c_facebook"
+        android:layout_below="@+id/c_num"
+        android:layout_alignParentStart="true" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Twitter Contact"
+        android:textSize="20sp"
+        android:ems="10"
+        android:layout_below="@+id/c_facebook"
+        android:layout_alignParentStart="true"
+        android:id="@+id/c_twitter" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Instagram Contact"
+        android:textSize="20sp"
+        android:ems="10"
+        android:id="@+id/c_instagram"
+        android:layout_below="@+id/c_twitter"
+        android:layout_alignParentStart="true" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Skill(s)"
+        android:textSize="20sp"
+        android:ems="10"
+        android:layout_below="@+id/c_instagram"
+        android:layout_alignParentStart="true"
+        android:id="@+id/c_skill" />
+
+
+
+
+</RelativeLayout>

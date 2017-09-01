@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_assignment_add_input"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="lemuel.charles.charl.lemutask.assignment_add_input">
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Title"
+        android:textSize="20sp"
+        android:ems="10"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/assignment_title_tx" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Detail"
+        android:textSize="20sp"
+        android:ems="10"
+        android:layout_below="@+id/assignment_title_tx"
+        android:layout_alignParentStart="true"
+        android:id="@+id/assignment_detail_tx" />
+
+    <CheckBox
+        android:text="Time Due"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/assignment_detail_tx"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="21dp"
+        android:id="@+id/assignment_checkbox_tx"
+        android:checked="true"
+        android:onClick="onCheckboxClicked"
+        />
+
+    <TextView
+        android:text="2016/5/2"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/assignment_date_tx"
+        android:textSize="20sp"
+        android:layout_marginTop="18dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_below="@+id/assignment_checkbox_tx"
+        android:layout_toEndOf="@+id/assignment_checkbox_tx"
+        android:layout_marginStart="26dp" />
+
+    <TextView
+        android:text="8:00 AM"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginStart="8dp"
+        android:id="@+id/assignment_time_tx"
+        android:layout_alignBaseline="@+id/assignment_date_tx"
+        android:layout_alignBottom="@+id/assignment_date_tx"
+        android:layout_alignParentStart="true"
+        android:onClick="showTimePickerDialog"
+        />
+</RelativeLayout>
