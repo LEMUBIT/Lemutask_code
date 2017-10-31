@@ -28,12 +28,12 @@ public class todo_input extends AppCompatActivity implements to_do_time_picker.m
     //initialization
 
     //todo: check different times in reminder because it does not respond well sometimes
-TextView from,to;//textview for the From time and the To time
+    TextView from, to;//textview for the From time and the To time
 
     EditText description;
     AutoCompleteTextView title;
     sql_helper_lemutask sqlht;
-    boolean checked=true;//for check box
+    boolean checked = true;//for check box
     boolean test;//to test if insert was successful
     public String istimed = "1";
 
@@ -103,7 +103,8 @@ TextView from,to;//textview for the From time and the To time
             pmonth = month + 1;//since month starts forom 0
             pday = dayOfMonth;
             datebtn.setText(pday + "/" + pmonth + "/" + pyear);
-            //  Toast.makeText(todo_input.this,"This is the year "+pyear+" and the month "+pmonth+" and the date "+pdate,Toast.LENGTH_LONG).show();
+            //  Toast.makeText(todo_input.this,"This is the year "+pyear+" and the month "+pmonth+"
+            // and the date "+pdate,Toast.LENGTH_LONG).show();
         }
     };
 
@@ -111,7 +112,8 @@ TextView from,to;//textview for the From time and the To time
     protected Dialog onCreateDialog(int id) {
 
         if (id == sid) {
-            return new DatePickerDialog(this, datelistener, pyear, pmonth-1, pday);//pmonth-1 to give computer real month digit
+            return new DatePickerDialog(this, datelistener, pyear, pmonth - 1, pday);//pmonth-1 to
+            // give computer real month digit
 
         } else {
             return null;
@@ -144,10 +146,10 @@ TextView from,to;//textview for the From time and the To time
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.save:
-                if(checked)
+                if (checked)
                     test = adddata();
-                if(!checked)
-                    test=adddatanotime();
+                if (!checked)
+                    test = adddatanotime();
                 if (test)
                     finish();
                 break;
@@ -197,7 +199,8 @@ TextView from,to;//textview for the From time and the To time
             hour2 = Integer.parseInt(fromt2);
             hour = hour + hour2;
 
-            if (ampm.equals("P") && hour != 12)//because 12PM does not need added 12 hours, in 24 hour format it is still 12PM
+            if (ampm.equals("P") && hour != 12)//because 12PM does not need added 12 hours,
+            // in 24 hour format it is still 12PM
             {
                 hour = hour + 12;
             }
@@ -210,7 +213,8 @@ TextView from,to;//textview for the From time and the To time
 
         //setting calendar for pending intent
         calender.set(Calendar.DAY_OF_MONTH, pday);
-        calender.set(Calendar.MONTH, pmonth - 1);//for the computer to understand because month starts form zero and I incremented it before
+        calender.set(Calendar.MONTH, pmonth - 1);//for the computer to understand because
+        // month starts form zero and I incremented it before
         calender.set(Calendar.YEAR, pyear);
         calender.set(Calendar.HOUR_OF_DAY, hour);
         calender.set(Calendar.MINUTE, minute);
@@ -221,7 +225,9 @@ TextView from,to;//textview for the From time and the To time
             alarmint.putExtra("taskDescription", description.getText().toString());
 
             pendingalarm = PendingIntent.getBroadcast(todo_input.this, 0, alarmint, PendingIntent.FLAG_UPDATE_CURRENT);
-            boolean isins = sqlht.insertTODOdata(title.getText().toString(), description.getText().toString(), from.getText().toString(), to.getText().toString(), istimed, String.valueOf(pday), String.valueOf(pmonth), String.valueOf(pyear));
+            boolean isins = sqlht.insertTODOdata(title.getText().toString(),
+                    description.getText().toString(), from.getText().toString(),
+                    to.getText().toString(), istimed, String.valueOf(pday), String.valueOf(pmonth), String.valueOf(pyear));
             if (isins) {
                 Toast.makeText(todo_input.this, "Success" + hour + ":" + minute, Toast.LENGTH_SHORT).show();
             } else
@@ -244,22 +250,22 @@ TextView from,to;//textview for the From time and the To time
     }
 
     //////////////////////////////////////////
-    public boolean adddatanotime()
-    {
-
-
+    public boolean adddatanotime() {
 
 
         //setting calendar for pending intent
         calender.set(Calendar.DAY_OF_MONTH, pday);
-        calender.set(Calendar.MONTH, pmonth - 1);//for the computer to understand because month starts form zero and I incremented it before
+        calender.set(Calendar.MONTH, pmonth - 1);//for the computer to understand because month
+        // starts form zero and I incremented it before
         calender.set(Calendar.YEAR, pyear);
-calender.set(Calendar.HOUR_OF_DAY,23);
+        calender.set(Calendar.HOUR_OF_DAY, 23);
 
         if (calender.getTimeInMillis() >= calender_compare.getTimeInMillis()) {
 
 
-            boolean isins = sqlht.insertTODOdata(title.getText().toString(), description.getText().toString(), "--:--", " ", istimed, String.valueOf(pday), String.valueOf(pmonth), String.valueOf(pyear));
+            boolean isins = sqlht.insertTODOdata(title.getText().toString(),
+                    description.getText().toString(), "--:--", " ", istimed, String.valueOf(pday),
+                    String.valueOf(pmonth), String.valueOf(pyear));
             if (isins) {
                 Toast.makeText(todo_input.this, "Success", Toast.LENGTH_SHORT).show();
             } else
@@ -270,9 +276,8 @@ calender.set(Calendar.HOUR_OF_DAY,23);
             description.setText("");
 
 
-                      return true;
-        }
-        else {
+            return true;
+        } else {
             Toast.makeText(this, "Time has already passed :(", Toast.LENGTH_LONG).show();
             return false;
         }
@@ -302,10 +307,10 @@ calender.set(Calendar.HOUR_OF_DAY,23);
             istimed = "0";
             from.setEnabled(false);
             to.setEnabled(false);
-            checked=false;
+            checked = false;
         } else {
             istimed = "1";
-            checked=true;
+            checked = true;
             from.setEnabled(true);
             to.setEnabled(true);
         }

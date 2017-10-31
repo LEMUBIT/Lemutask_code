@@ -16,11 +16,10 @@ import java.util.Calendar;
 
 public class to_do_time_picker extends DialogFragment
         implements TimePickerDialog.OnTimeSetListener {
-public int hour,minute;
+    public int hour, minute;
 
 
-    public static  interface myOnCompleteListener
-    {
+    public static interface myOnCompleteListener {
         public abstract void onComplete(String time, String orgtime);
     }
 
@@ -30,11 +29,9 @@ public int hour,minute;
     public void onAttach(Context context) {
         super.onAttach(context);
 
-        try{
-            this.mlistener=(myOnCompleteListener)context;
-        }
-        catch (final ClassCastException e)
-        {
+        try {
+            this.mlistener = (myOnCompleteListener) context;
+        } catch (final ClassCastException e) {
             throw new ClassCastException(context.toString() + "Must implement myOnCompleteListener");
         }
     }
@@ -45,8 +42,8 @@ public int hour,minute;
 
 
         final Calendar c = Calendar.getInstance();
-         hour = c.get(Calendar.HOUR_OF_DAY);
-         minute = c.get(Calendar.MINUTE);
+        hour = c.get(Calendar.HOUR_OF_DAY);
+        minute = c.get(Calendar.MINUTE);
 
         // Create a new instance of TimePickerDialog and return it
         return new TimePickerDialog(getActivity(), this, hour, minute,
@@ -56,28 +53,25 @@ public int hour,minute;
     }
 
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-        String thehour=String.valueOf(hourOfDay);
-        String the_org_hour=thehour;
-        String theminute=String.valueOf(minute);
-        String AP_M="AM";
+        String thehour = String.valueOf(hourOfDay);
+        String the_org_hour = thehour;
+        String theminute = String.valueOf(minute);
+        String AP_M = "AM";
         //convert from 24-hour to 12-hour
-        if(hourOfDay>12)
-        {
-            thehour=String.valueOf(hourOfDay-12);
-            AP_M="PM";
+        if (hourOfDay > 12) {
+            thehour = String.valueOf(hourOfDay - 12);
+            AP_M = "PM";
         }
-        if(hourOfDay==12)
-        {
+        if (hourOfDay == 12) {
 
-            AP_M="PM";
+            AP_M = "PM";
         }
 
-        if(minute<10)
-        {
-            theminute="0"+String.valueOf(minute);
+        if (minute < 10) {
+            theminute = "0" + String.valueOf(minute);
         }
 
-        String time=thehour+":" +theminute+" "+AP_M;
-        this.mlistener.onComplete(time,the_org_hour);
+        String time = thehour + ":" + theminute + " " + AP_M;
+        this.mlistener.onComplete(time, the_org_hour);
     }
 }

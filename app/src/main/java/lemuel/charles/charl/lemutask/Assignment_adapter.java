@@ -27,44 +27,39 @@ public class Assignment_adapter extends CursorAdapter {
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
-        TextView worktitle=(TextView) view.findViewById(R.id.homeworktitle);
-        CheckBox ckid=(CheckBox)view.findViewById(R.id.homework_checkBox);
+        TextView worktitle = (TextView) view.findViewById(R.id.homeworktitle);
+        CheckBox ckid = (CheckBox) view.findViewById(R.id.homework_checkBox);
 
-        TextView workid=(TextView) view.findViewById(R.id.homworkid);
-
-
-
-        String puttitle=cursor.getString(cursor.getColumnIndexOrThrow("TITLE"));
-        String putid=cursor.getString(cursor.getColumnIndexOrThrow("_id"));
-        String puisdone=cursor.getString(cursor.getColumnIndexOrThrow("ISDONE"));
-        String day=cursor.getString(cursor.getColumnIndexOrThrow("DAY"));
-        String month=cursor.getString(cursor.getColumnIndexOrThrow("MONTH"));
-        String year=cursor.getString(cursor.getColumnIndexOrThrow("YEAR"));
-        String date=day+"/"+month+"/"+year;
-
-        if(puisdone.contentEquals("1"))
-        {
+        TextView workid = (TextView) view.findViewById(R.id.homworkid);
 
 
-           // due.setText(date);
-           // worktitle.setText(puttitle);
+        String puttitle = cursor.getString(cursor.getColumnIndexOrThrow("TITLE"));
+        String putid = cursor.getString(cursor.getColumnIndexOrThrow("_id"));
+        String puisdone = cursor.getString(cursor.getColumnIndexOrThrow("ISDONE"));
+        String day = cursor.getString(cursor.getColumnIndexOrThrow("DAY"));
+        String month = cursor.getString(cursor.getColumnIndexOrThrow("MONTH"));
+        String year = cursor.getString(cursor.getColumnIndexOrThrow("YEAR"));
+        String date = day + "/" + month + "/" + year;
+
+        if (puisdone.contentEquals("1")) {
+
+
+            // due.setText(date);
+            // worktitle.setText(puttitle);
             ckid.setChecked(true);
             worktitle.setText("done");
             worktitle.setPaintFlags(worktitle.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-           // due.setPaintFlags(due.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+            // due.setPaintFlags(due.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
 
-        }
-        else
-        {
-          //  due.setText(date);
+        } else {
+            //  due.setText(date);
             worktitle.setText(puttitle);
         }
-
 
 
         workid.setText(putid);
 
     }
 
-    }
+}
 

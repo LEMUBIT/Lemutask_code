@@ -20,21 +20,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-public class Classes extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener{
+public class Classes extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    /**
-     * The {@link android.support.v4.view.PagerAdapter} that will provide
-     * fragments for each of the sections. We use a
-     * {@link FragmentPagerAdapter} derivative, which will keep every
-     * loaded fragment in memory. If this becomes too memory intensive, it
-     * may be best to switch to a
-     * {@link android.support.v4.app.FragmentStatePagerAdapter}.
-     */
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
-    /**
-     * The {@link ViewPager} that will host the section contents.
-     */
     private ViewPager mViewPager;
 
     @Override
@@ -45,10 +34,6 @@ public class Classes extends AppCompatActivity  implements NavigationView.OnNavi
         setContentView(R.layout.classes_drawer);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);//// TODO: 29/04/2017
-//        setSupportActionBar(toolbar);
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -64,14 +49,11 @@ public class Classes extends AppCompatActivity  implements NavigationView.OnNavi
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent ca=new Intent(Classes.this,classes_add.class);
+                Intent ca = new Intent(Classes.this, classes_add.class);
                 startActivity(ca);
-
-                /*Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();*/
             }
         });
-///
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -89,44 +71,31 @@ public class Classes extends AppCompatActivity  implements NavigationView.OnNavi
         int id = item.getItemId();
 
         if (id == R.id.homez) {
-Intent ma=new Intent(this,MainActivity.class);
+            Intent ma = new Intent(this, MainActivity.class);
             startActivity(ma);
-
-
-
-//            HomeFragment homef=new HomeFragment();
-//            FragmentManager fragmgr=getSupportFragmentManager();
-//
-//            //(replaced, the replacer)
-//            fragmgr.beginTransaction().replace(R.id.content_main,homef,homef.getTag()).commit();
-
-        } //I folded the code block, expand to see the code
+        }
 
         if (id == R.id.todo) {
-            Intent t=new Intent(this,Tab_todo.class);
+            Intent t = new Intent(this, Tab_todo.class);
             startActivity(t);
         }
-        if(id==R.id.clas)
-        {
-            Intent t=new Intent(this,Classes.class);
+        if (id == R.id.clas) {
+            Intent t = new Intent(this, Classes.class);
             startActivity(t);
         }
-        if(id==R.id.hw)
-        {
-            Intent t=new Intent(this,assignment_main.class);
-            startActivity(t);
-        }
-
-        if(id==R.id.project)
-        {
-            Intent t=new Intent(this,project_main.class);
+        if (id == R.id.hw) {
+            Intent t = new Intent(this, assignment_main.class);
             startActivity(t);
         }
 
-        if(id==R.id.contacts)
-        {
+        if (id == R.id.project) {
+            Intent t = new Intent(this, project_main.class);
+            startActivity(t);
+        }
 
-            Intent t=new Intent(this,Contacts.class);
+        if (id == R.id.contacts) {
+
+            Intent t = new Intent(this, Contacts.class);
             startActivity(t);
         }
 
@@ -134,6 +103,7 @@ Intent ma=new Intent(this,MainActivity.class);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -143,6 +113,7 @@ Intent ma=new Intent(this,MainActivity.class);
             super.onBackPressed();
         }
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -217,22 +188,22 @@ Intent ma=new Intent(this,MainActivity.class);
 
             switch (position) {
                 case 0:
-                    class_monday ttd=new class_monday();
+                    class_monday ttd = new class_monday();
                     return ttd;
                 case 1:
-                    class_tuesday tu=new class_tuesday();
+                    class_tuesday tu = new class_tuesday();
                     return tu;
                 case 2:
-                    class_wednesday wed=new class_wednesday();
+                    class_wednesday wed = new class_wednesday();
                     return wed;
                 case 3:
-                    class_thursday thu=new class_thursday();
+                    class_thursday thu = new class_thursday();
                     return thu;
                 case 4:
-                    class_friday fri=new class_friday();
+                    class_friday fri = new class_friday();
                     return fri;
                 case 5:
-                    class_saturday sat=new class_saturday();
+                    class_saturday sat = new class_saturday();
                     return sat;
 
 

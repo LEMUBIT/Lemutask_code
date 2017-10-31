@@ -25,18 +25,18 @@ public class project_adapter extends CursorAdapter {
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
-        TextView prt=(TextView) view.findViewById(R.id.projtitle);
-        TextView prper=(TextView) view.findViewById(R.id.projpercent);
-        TextView prid=(TextView) view.findViewById(R.id.projid);
+        TextView prt = (TextView) view.findViewById(R.id.projtitle);
+        TextView prper = (TextView) view.findViewById(R.id.projpercent);
+        TextView prid = (TextView) view.findViewById(R.id.projid);
 
-        String putid=cursor.getString(cursor.getColumnIndexOrThrow("_id"));
-        String puttitle=cursor.getString(cursor.getColumnIndexOrThrow("TITLE"));
-        String percent=cursor.getString(cursor.getColumnIndexOrThrow("PERCENT"));
+        String putid = cursor.getString(cursor.getColumnIndexOrThrow("_id"));
+        String puttitle = cursor.getString(cursor.getColumnIndexOrThrow("TITLE"));
+        String percent = cursor.getString(cursor.getColumnIndexOrThrow("PERCENT"));
 
 
         prid.setText(putid);
         prt.setText(puttitle);
-        prper.setText(percent+"% complete");
+        prper.setText(percent + "% complete");
 
     }
 }

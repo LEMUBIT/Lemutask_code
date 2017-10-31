@@ -27,41 +27,35 @@ public class class_monday extends Fragment {
     public ListView lvItems3;
 
 
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.classes_monday_fragment, container, false);
 
 
-
         lvItems3 = (ListView) view.findViewById(R.id.mondaylist);
         lvItems3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                TextView title= (TextView) view.findViewById(R.id.txclassTIme);
+                TextView title = (TextView) view.findViewById(R.id.txclassTIme);
 
                 title.setText("done");
             }
         });
         //register listview for context menu
         registerForContextMenu(lvItems3);
-        sqlht=new sql_helper_lemutask(getActivity());
+        sqlht = new sql_helper_lemutask(getActivity());
         return view;
     }
 
 
-
-
-
-//todo: seems widgets are preventing user from touching listview, when tested with class_text_testing, it works
+    //todo: seems widgets are preventing user from touching listview, when tested with class_text_testing, it works
     //todo:also clickable affects it, if its clickable then ...
     @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo)
-    {
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
 
-        MenuInflater inflater =getActivity().getMenuInflater();
+        MenuInflater inflater = getActivity().getMenuInflater();
         inflater.inflate(R.menu.list_menu, menu);
 
     }
@@ -70,15 +64,14 @@ public class class_monday extends Fragment {
     @Override
     public boolean onContextItemSelected(MenuItem item) {
 
-        switch(item.getItemId())
-        {
+        switch (item.getItemId()) {
 
             case R.id.menulist:
                 AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
-                View targetView=(View) info.targetView;
+                View targetView = (View) info.targetView;
                 String viewId = (String) ((TextView) targetView.findViewById(R.id.class_id)).getText();
-                int test=sqlht.deleteclass(viewId);
-                Toast.makeText(getActivity(),"Id="+viewId+"-"+test,Toast.LENGTH_SHORT).show();
+                int test = sqlht.deleteclass(viewId);
+                Toast.makeText(getActivity(), "Id=" + viewId + "-" + test, Toast.LENGTH_SHORT).show();
 
                 return true;
         }
@@ -94,17 +87,15 @@ public class class_monday extends Fragment {
         // Query for items from the database and get a cursor back
         Cursor todoCursor = sqlht.getmondayclasss();
 
-        if(todoCursor.getCount()==0)
-        {
-            Log.i("Message","No data");
+        if (todoCursor.getCount() == 0) {
+            Log.i("Message", "No data");
             return;
-        }
-        else{
+        } else {
 
             //Log.i("Message","There is data "+ todoCursor.getColumnCount()+todoCursor.getColumnName(0)+todoCursor.getColumnIndexOrThrow("_id"));
 // Setup cursor adapter using cursor from last step
-            Context c=view.getContext();
-            classes_adapter todoAdapter = new classes_adapter(c, todoCursor,true);
+            Context c = view.getContext();
+            classes_adapter todoAdapter = new classes_adapter(c, todoCursor, true);
             lvItems3.setAdapter(todoAdapter);
 
         }

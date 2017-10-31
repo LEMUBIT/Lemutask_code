@@ -21,20 +21,20 @@ import android.view.animation.DecelerateInterpolator;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    public static int delete=1;
+    public static int delete = 1;
 
 
-    /**This is the activity of the home page
+    /**
+     * This is the activity of the home page
      * Contains the floating button
-     *
-     *
-     * **/
+     **/
 
 
     //
-    FloatingActionButton fabTodo,fabIdea,fabplus,fabAssignment;
-    Animation fabOpen, fabClose,fabRotate, fabRotateAnti;
-    boolean isOpen=false;
+    FloatingActionButton fabTodo, fabIdea, fabplus, fabAssignment;
+    Animation fabOpen, fabClose, fabRotate, fabRotateAnti;
+    boolean isOpen = false;
+
     //
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,23 +46,23 @@ public class MainActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
 
-///////////
-        fabAssignment=(FloatingActionButton) findViewById(R.id.fabAssignment);
-        fabTodo=(FloatingActionButton) findViewById(R.id.fabtodo);
-        fabIdea=(FloatingActionButton) findViewById(R.id.fabidea);
-        fabOpen= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.floating_open);
-        fabClose=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.floating_close);
-        fabRotate=AnimationUtils.loadAnimation(getApplication(),R.anim.floating_rotate);
-        fabRotateAnti=AnimationUtils.loadAnimation(getApplication(),R.anim.floating_rotate_anti);
+        ///////////
+        fabAssignment = (FloatingActionButton) findViewById(R.id.fabAssignment);
+        fabTodo = (FloatingActionButton) findViewById(R.id.fabtodo);
+        fabIdea = (FloatingActionButton) findViewById(R.id.fabidea);
+        fabOpen = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.floating_open);
+        fabClose = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.floating_close);
+        fabRotate = AnimationUtils.loadAnimation(getApplication(), R.anim.floating_rotate);
+        fabRotateAnti = AnimationUtils.loadAnimation(getApplication(), R.anim.floating_rotate_anti);
         fabplus = (FloatingActionButton) findViewById(R.id.fab);
 
-//////////
+        //////////
         //animate fab
-        DisplayMetrics dmetric=new DisplayMetrics();
-       getWindowManager().getDefaultDisplay().getMetrics(dmetric);
+        DisplayMetrics dmetric = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(dmetric);
         fabplus.setTranslationX(-dmetric.heightPixels);
 
-        DecelerateInterpolator interpolator=new DecelerateInterpolator();
+        DecelerateInterpolator interpolator = new DecelerateInterpolator();
         fabplus.animate().setInterpolator(interpolator)
                 .setDuration(200)
                 .setStartDelay(700)
@@ -70,16 +70,13 @@ public class MainActivity extends AppCompatActivity
                 .start();
 
 
-
         ///
-
 
 
         fabplus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(isOpen)
-                {
+                if (isOpen) {
                     fabTodo.startAnimation(fabClose);
                     fabIdea.startAnimation(fabClose);
                     fabAssignment.startAnimation(fabClose);
@@ -87,18 +84,17 @@ public class MainActivity extends AppCompatActivity
                     fabAssignment.setClickable(false);
                     fabTodo.setClickable(false);
                     fabIdea.setClickable(false);
-                    isOpen=false;
+                    isOpen = false;
 
-                }
-                else
-                {fabTodo.startAnimation(fabOpen);
+                } else {
+                    fabTodo.startAnimation(fabOpen);
                     fabAssignment.startAnimation(fabOpen);
                     fabIdea.startAnimation(fabOpen);
                     fabplus.startAnimation(fabRotate);
                     fabAssignment.setClickable(true);
                     fabTodo.setClickable(true);
                     fabIdea.setClickable(true);
-                    isOpen=true;
+                    isOpen = true;
 
                 }
 
@@ -134,8 +130,8 @@ public class MainActivity extends AppCompatActivity
                 fabAssignment.setClickable(false);
                 fabTodo.setClickable(false);
                 fabIdea.setClickable(false);
-                isOpen=false;
-                Intent inputtd=new Intent(MainActivity.this,todo_input.class);
+                isOpen = false;
+                Intent inputtd = new Intent(MainActivity.this, todo_input.class);
                 startActivity(inputtd);
             }
         });
@@ -151,8 +147,8 @@ public class MainActivity extends AppCompatActivity
                 fabAssignment.setClickable(false);
                 fabTodo.setClickable(false);
                 fabIdea.setClickable(false);
-                isOpen=false;
-                Intent proj=new Intent(MainActivity.this,project.class);
+                isOpen = false;
+                Intent proj = new Intent(MainActivity.this, project.class);
                 startActivity(proj);
             }
         });
@@ -168,8 +164,8 @@ public class MainActivity extends AppCompatActivity
                 fabAssignment.setClickable(false);
                 fabTodo.setClickable(false);
                 fabIdea.setClickable(false);
-                isOpen=false;
-                Intent inputhw=new Intent(MainActivity.this,assignment_add_input.class);
+                isOpen = false;
+                Intent inputhw = new Intent(MainActivity.this, assignment_add_input.class);
                 startActivity(inputhw);
             }
         });
@@ -185,11 +181,11 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         /////
-        HomeFragment homef=new HomeFragment();
-        FragmentManager fragmgr=getSupportFragmentManager();
+        HomeFragment homef = new HomeFragment();
+        FragmentManager fragmgr = getSupportFragmentManager();
 
         //(replaced, the replacer)
-        fragmgr.beginTransaction().replace(R.id.content_main,homef,homef.getTag()).commit();
+        fragmgr.beginTransaction().replace(R.id.content_main, homef, homef.getTag()).commit();
     }
 
     @Override
@@ -232,7 +228,7 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.homez) {
 
-            Intent ma=new Intent(this,MainActivity.class);
+            Intent ma = new Intent(this, MainActivity.class);
             startActivity(ma);
 
 //            HomeFragment homef=new HomeFragment();
@@ -244,30 +240,26 @@ public class MainActivity extends AppCompatActivity
         } //I folded the code block, expand to see the code
 
         if (id == R.id.todo) {
-            Intent t=new Intent(this,Tab_todo.class);
+            Intent t = new Intent(this, Tab_todo.class);
             startActivity(t);
         }
-        if(id==R.id.clas)
-        {
-            Intent t=new Intent(this,Classes.class);
+        if (id == R.id.clas) {
+            Intent t = new Intent(this, Classes.class);
             startActivity(t);
         }
-        if(id==R.id.hw)
-        {
-            Intent t=new Intent(this,assignment_main.class);
-            startActivity(t);
-        }
-
-        if(id==R.id.project)
-        {
-            Intent t=new Intent(this,project_main.class);
+        if (id == R.id.hw) {
+            Intent t = new Intent(this, assignment_main.class);
             startActivity(t);
         }
 
-        if(id==R.id.contacts)
-        {
+        if (id == R.id.project) {
+            Intent t = new Intent(this, project_main.class);
+            startActivity(t);
+        }
 
-            Intent t=new Intent(this,Contacts.class);
+        if (id == R.id.contacts) {
+
+            Intent t = new Intent(this, Contacts.class);
             startActivity(t);
         }
 

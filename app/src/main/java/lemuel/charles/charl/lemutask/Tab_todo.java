@@ -24,7 +24,7 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Tab_todo extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class Tab_todo extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -42,6 +42,7 @@ public class Tab_todo extends AppCompatActivity implements NavigationView.OnNavi
 
     private ViewPager mViewPager;
     CheckBox chkTimed;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,7 +56,7 @@ public class Tab_todo extends AppCompatActivity implements NavigationView.OnNavi
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
-        chkTimed=(CheckBox) findViewById(R.id.todochk1);
+        chkTimed = (CheckBox) findViewById(R.id.todochk1);
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
@@ -67,7 +68,7 @@ public class Tab_todo extends AppCompatActivity implements NavigationView.OnNavi
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent todo=new Intent(Tab_todo.this,todo_input.class);
+                Intent todo = new Intent(Tab_todo.this, todo_input.class);
                 startActivity(todo);
             }
         });
@@ -113,36 +114,32 @@ public class Tab_todo extends AppCompatActivity implements NavigationView.OnNavi
         int id = item.getItemId();
 
         if (id == R.id.homez) {
-            Intent ma=new Intent(this,MainActivity.class);
+            Intent ma = new Intent(this, MainActivity.class);
             startActivity(ma);
 
         }
 
         if (id == R.id.todo) {
-            Intent t=new Intent(this,Tab_todo.class);
+            Intent t = new Intent(this, Tab_todo.class);
             startActivity(t);
         }
-        if(id==R.id.clas)
-        {
-            Intent t=new Intent(this,Classes.class);
+        if (id == R.id.clas) {
+            Intent t = new Intent(this, Classes.class);
             startActivity(t);
         }
-        if(id==R.id.hw)
-        {
-            Intent t=new Intent(this,assignment_main.class);
-            startActivity(t);
-        }
-
-        if(id==R.id.project)
-        {
-            Intent t=new Intent(this,project_main.class);
+        if (id == R.id.hw) {
+            Intent t = new Intent(this, assignment_main.class);
             startActivity(t);
         }
 
-        if(id==R.id.contacts)
-        {
+        if (id == R.id.project) {
+            Intent t = new Intent(this, project_main.class);
+            startActivity(t);
+        }
 
-            Intent t=new Intent(this,Contacts.class);
+        if (id == R.id.contacts) {
+
+            Intent t = new Intent(this, Contacts.class);
             startActivity(t);
         }
 
@@ -151,21 +148,19 @@ public class Tab_todo extends AppCompatActivity implements NavigationView.OnNavi
         return true;
     }
 
-    public  void sht(View v)
-    {
-        View parent=(View) v.getParent();
+    public void sht(View v) {
+        View parent = (View) v.getParent();
         TextView taskTextView = (TextView) parent.findViewById(R.id.txtid);
-        TextView test=(TextView)parent.findViewById(R.id.txtTitleop);
+        TextView test = (TextView) parent.findViewById(R.id.txtTitleop);
 
-       // test.setText(someDynamicString);
+        // test.setText(someDynamicString);
         test.setPaintFlags(test.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
         test.setTextColor(getResources().getColor(R.color.colordone));
 
-        Toast.makeText(this,"Well Done!",Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "Well Done!", Toast.LENGTH_LONG).show();
         test.setEnabled(false);
 
     }
-
 
 
     @Override
@@ -181,14 +176,13 @@ public class Tab_todo extends AppCompatActivity implements NavigationView.OnNavi
         }
 
 
-
         return super.onOptionsItemSelected(item);
     }
 
     /**
      * A placeholder fragment containing a simple view.
      */
-   //deleted fragmentplace holder here
+    //deleted fragmentplace holder here
 
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
@@ -204,16 +198,16 @@ public class Tab_todo extends AppCompatActivity implements NavigationView.OnNavi
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                   Tab_todo_timed ttd=new Tab_todo_timed();
+                    Tab_todo_timed ttd = new Tab_todo_timed();
                     return ttd;
                 case 1:
-                    Tab_todo_oportune tto=new Tab_todo_oportune();
+                    Tab_todo_oportune tto = new Tab_todo_oportune();
                     return tto;
                 case 2:
-                    NextSevenDaysTsk nxt=new NextSevenDaysTsk();
+                    NextSevenDaysTsk nxt = new NextSevenDaysTsk();
                     return nxt;
                 case 3:
-                    next_4_weeks nt=new next_4_weeks();
+                    next_4_weeks nt = new next_4_weeks();
                     return nt;
 
             }

@@ -24,7 +24,7 @@ public class class_wednesday extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.classes_wednesday_fragment, container, false);
-        sqlht=new sql_helper_lemutask(getActivity());
+        sqlht = new sql_helper_lemutask(getActivity());
         lvItems = (ListView) view.findViewById(R.id.wednesdaylist);
 
         return view;
@@ -36,17 +36,12 @@ public class class_wednesday extends Fragment {
 
         // Query for items from the database and get a cursor back
         Cursor todoCursor = sqlht.getwednesdayclass();
-        if(todoCursor.getCount()==0)
-        {
-            Log.i("Message","No data");
+        if (todoCursor.getCount() == 0) {
+            Log.i("Message", "No data");
             return;
-        }
-        else{
-
-            //Log.i("Message","There is data "+ todoCursor.getColumnCount()+todoCursor.getColumnName(0)+todoCursor.getColumnIndexOrThrow("_id"));
-// Setup cursor adapter using cursor from last step
-            Context c=view.getContext();
-            classes_adapter todoAdapter = new classes_adapter(c, todoCursor,true);
+        } else {
+            Context c = view.getContext();
+            classes_adapter todoAdapter = new classes_adapter(c, todoCursor, true);
             lvItems.setAdapter(todoAdapter);
 
         }

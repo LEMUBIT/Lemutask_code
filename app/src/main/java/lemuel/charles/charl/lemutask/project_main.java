@@ -13,7 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
 
-public class project_main extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class project_main extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +27,8 @@ public class project_main extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View view) {
 
-                Intent t=new Intent(project_main.this,project.class);
-                t.putExtra("edit","no");//this means the intent call is not for edit
+                Intent t = new Intent(project_main.this, project.class);
+                t.putExtra("edit", "no");//this means the intent call is not for edit
                 startActivity(t);
 
             }
@@ -51,36 +51,32 @@ public class project_main extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if (id == R.id.homez) {
-            Intent ma=new Intent(this,MainActivity.class);
+            Intent ma = new Intent(this, MainActivity.class);
             startActivity(ma);
 
         }
 
         if (id == R.id.todo) {
-            Intent t=new Intent(this,Tab_todo.class);
+            Intent t = new Intent(this, Tab_todo.class);
             startActivity(t);
         }
-        if(id==R.id.clas)
-        {
-            Intent t=new Intent(this,Classes.class);
+        if (id == R.id.clas) {
+            Intent t = new Intent(this, Classes.class);
             startActivity(t);
         }
-        if(id==R.id.hw)
-        {
-            Intent t=new Intent(this,assignment_main.class);
-            startActivity(t);
-        }
-
-        if(id==R.id.project)
-        {
-            Intent t=new Intent(this,project_main.class);
+        if (id == R.id.hw) {
+            Intent t = new Intent(this, assignment_main.class);
             startActivity(t);
         }
 
-        if(id==R.id.contacts)
-        {
+        if (id == R.id.project) {
+            Intent t = new Intent(this, project_main.class);
+            startActivity(t);
+        }
 
-            Intent t=new Intent(this,Contacts.class);
+        if (id == R.id.contacts) {
+
+            Intent t = new Intent(this, Contacts.class);
             startActivity(t);
         }
 

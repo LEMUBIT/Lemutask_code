@@ -25,15 +25,15 @@ public class Contact_adapter extends CursorAdapter {
 
     @Override
     public void bindView(View view, Context context, Cursor cursor) {
-        TextView contact_name=(TextView) view.findViewById(R.id.contactname);
-        TextView contact_id=(TextView) view.findViewById(R.id.contactid);
+        TextView contact_name = (TextView) view.findViewById(R.id.contactname);
+        TextView contact_id = (TextView) view.findViewById(R.id.contactid);
 
-        String putcid=cursor.getString(cursor.getColumnIndexOrThrow("_id"));
-        String putcname=cursor.getString(cursor.getColumnIndexOrThrow("NAME"));
-        String cnick=cursor.getString(cursor.getColumnIndexOrThrow("NICK"));
+        String putcid = cursor.getString(cursor.getColumnIndexOrThrow("_id"));
+        String putcname = cursor.getString(cursor.getColumnIndexOrThrow("NAME"));
+        String cnick = cursor.getString(cursor.getColumnIndexOrThrow("NICK"));
 
         contact_id.setText(putcid);
 
-        contact_name.setText(putcname+" "+"("+"'"+cnick+"'"+")");
+        contact_name.setText(putcname + " " + "(" + "'" + cnick + "'" + ")");
     }
 }

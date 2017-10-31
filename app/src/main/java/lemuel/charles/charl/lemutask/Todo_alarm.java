@@ -23,12 +23,12 @@ public class Todo_alarm extends BroadcastReceiver {
         } else {
             Log.i("Broad", "its a null");
         }
-//intent to ringtone service
+        //intent to ringtone service
         Intent service_intent = new Intent(context, ringservice.class);
         service_intent.putExtra("taskTitle", title);
         service_intent.putExtra("taskDescription", description);
 
-//start ringtone
+        //start ringtone
         context.startService(service_intent);
 
     }

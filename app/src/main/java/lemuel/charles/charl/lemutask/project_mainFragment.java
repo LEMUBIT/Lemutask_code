@@ -29,18 +29,18 @@ public class project_mainFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        view= inflater.inflate(R.layout.fragment_project_main, container, false);
-        lvItems=(ListView) view.findViewById(R.id.projlist);
-        sqlht=new sql_helper_lemutask(view.getContext());
+        view = inflater.inflate(R.layout.fragment_project_main, container, false);
+        lvItems = (ListView) view.findViewById(R.id.projlist);
+        sqlht = new sql_helper_lemutask(view.getContext());
 
         lvItems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                project_id=(TextView) view.findViewById(R.id.projid);
-                String pid=project_id.getText().toString();
+                project_id = (TextView) view.findViewById(R.id.projid);
+                String pid = project_id.getText().toString();
 
-                Intent i=new Intent(getActivity(),Project_view.class);
-                i.putExtra("projectid",pid);
+                Intent i = new Intent(getActivity(), Project_view.class);
+                i.putExtra("projectid", pid);
                 startActivity(i);
             }
         });
@@ -55,18 +55,16 @@ public class project_mainFragment extends Fragment {
 
 
         // SQLiteDatabase db = sqlh.getWritableDatabase();
-// Query for items from the database and get a cursor back
+        // Query for items from the database and get a cursor back
         Cursor projectcursor = sqlht.getProject();
-        if(projectcursor.getCount()==0)
-        {
-            Log.i("Message","No data");
+        if (projectcursor.getCount() == 0) {
+            Log.i("Message", "No data");
             return;
-        }
-        else{
+        } else {
 
 
-            Context c=view.getContext();
-            project_adapter todoAdapter = new project_adapter(c, projectcursor,true);
+            Context c = view.getContext();
+            project_adapter todoAdapter = new project_adapter(c, projectcursor, true);
             lvItems.setAdapter(todoAdapter);
 
         }

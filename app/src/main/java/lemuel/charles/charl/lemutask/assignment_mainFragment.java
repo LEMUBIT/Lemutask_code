@@ -21,7 +21,7 @@ public class assignment_mainFragment extends Fragment {
     public ListView lvItems;
     sql_helper_lemutask sqlht;
     CheckBox hwchk;
-    TextView hwtx,hwid;
+    TextView hwtx, hwid;
 
 
     public assignment_mainFragment() {
@@ -37,28 +37,24 @@ public class assignment_mainFragment extends Fragment {
         lvItems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                hwchk=(CheckBox) view.findViewById(R.id.homework_checkBox);
-                hwtx=(TextView)view.findViewById(R.id.homeworktitle);
-                hwid=(TextView) view.findViewById(R.id.homworkid);
-                String idhw=hwid.getText().toString();
+                hwchk = (CheckBox) view.findViewById(R.id.homework_checkBox);
+                hwtx = (TextView) view.findViewById(R.id.homeworktitle);
+                hwid = (TextView) view.findViewById(R.id.homworkid);
+                String idhw = hwid.getText().toString();
 
 
                 boolean checked = hwchk.isChecked();
-                sql_helper_lemutask sqlhck=new sql_helper_lemutask(view.getContext());
-                if(!checked)
-                {
+                sql_helper_lemutask sqlhck = new sql_helper_lemutask(view.getContext());
+                if (!checked) {
 
                     hwchk.setChecked(true);
-sqlhck.updateAssignment(idhw);
+                    sqlhck.updateAssignment(idhw);
                     sqlhck.close();
-                }
-                else
-                {
+                } else {
                     hwchk.setChecked(false);
                     sqlhck.updateAssignmentundone(idhw);
                     sqlhck.close();
                 }
-
 
 
             }
@@ -72,26 +68,24 @@ sqlhck.updateAssignment(idhw);
     @Override
     public void onResume() {
         super.onResume();
-        sql_helper_lemutask sqlh=new sql_helper_lemutask(view.getContext());
+        sql_helper_lemutask sqlh = new sql_helper_lemutask(view.getContext());
         // SQLiteDatabase db = sqlh.getWritableDatabase();
-// Query for items from the database and get a cursor back
+        // Query for items from the database and get a cursor back
         Cursor todoCursor = sqlh.getAssignment();
-        if(todoCursor.getCount()==0)
-        {
-            Log.i("Message","No data");
+        if (todoCursor.getCount() == 0) {
+            Log.i("Message", "No data");
             return;
-        }
-        else{
+        } else {
 
 
-            Context c=view.getContext();
-            Assignment_adapter todoAdapter = new Assignment_adapter(c, todoCursor,true);
+            Context c = view.getContext();
+            Assignment_adapter todoAdapter = new Assignment_adapter(c, todoCursor, true);
             lvItems.setAdapter(todoAdapter);
 
         }
 
 
-sqlh.close();
+        sqlh.close();
 
     }
 }

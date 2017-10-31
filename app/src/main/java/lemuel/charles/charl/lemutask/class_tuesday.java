@@ -42,8 +42,6 @@ public class class_tuesday extends Fragment {
             return;
         } else {
 
-            //Log.i("Message","There is data "+ todoCursor.getColumnCount()+todoCursor.getColumnName(0)+todoCursor.getColumnIndexOrThrow("_id"));
-// Setup cursor adapter using cursor from last step
             Context c = view.getContext();
             classes_adapter todoAdapter = new classes_adapter(c, todoCursor, true);
             lvItems.setAdapter(todoAdapter);
