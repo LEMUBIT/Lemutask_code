@@ -1,5 +1,5 @@
 # Lemutask_code
-Source code of Lemtask, an Organizer for students.
+Source code of Lemtask, an Organizer for students. My final year project :). 
 
 
 ![alt text](snapShots/snapA.png "Description goes here")
