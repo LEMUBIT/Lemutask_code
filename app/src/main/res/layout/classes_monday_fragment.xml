@@ -6,7 +6,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="lemuel.charles.charl.lemutask.Classes$PlaceholderFragment">
+    tools:context="lemuel.charles.charl.lemutask.Lecture.Classes$PlaceholderFragment">
     <ListView
         android:id="@+id/mondaylist"
         android:layout_width="match_parent"

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="lemuel.charles.charl.lemutask.Tab_todo">
+    tools:context="lemuel.charles.charl.lemutask.Tasks.TabTodo">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"

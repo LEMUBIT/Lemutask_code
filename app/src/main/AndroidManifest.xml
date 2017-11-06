@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Tab_todo"
+            android:name=".Tasks.TabTodo"
             android:label="@string/title_activity_tab_todo"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -32,17 +32,17 @@
             android:value=".MainActivity" />
 
         <activity
-            android:name=".todo_input"
+            android:name=".Tasks.TodoInput"
             android:label="Add new task" />
 
-        <receiver android:name=".Todo_alarm" />
+        <receiver android:name=".Tasks.Service.Todo_alarm" />
 
         <service
-            android:name=".ringservice"
+            android:name=".Tasks.Service.RingService"
             android:enabled="true" />
 
         <activity
-            android:name=".Classes"
+            android:name=".Lecture.Classes"
             android:label="@string/title_activity_classes"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -50,9 +50,9 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".classes_add" />
+        <activity android:name=".Lecture.ClassesAdd" />
         <activity
-            android:name=".assignment_main"
+            android:name=".Assignment.AssignmentMain"
             android:label="@string/title_activity_assignment_main"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
@@ -60,13 +60,13 @@
                 android:value=".MainActivity" />
         </activity>
         <activity
-            android:name=".assignment_add_input"
+            android:name=".Assignment.AssignmentAddInput"
             android:label="Add Assignment" />
         <activity
-            android:name=".project"
+            android:name=".Project.Project"
             android:label="New Project" />
         <activity
-            android:name=".project_main"
+            android:name=".Project.ProjectMain"
             android:label="@string/title_activity_project_main"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -75,14 +75,14 @@
                 android:value=".MainActivity" />
         </activity>
         <activity
-            android:name=".Project_view"
+            android:name=".Project.ProjectView"
             android:label="View Project">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".project_main" />
+                android:value=".Project.ProjectMain" />
         </activity>
         <activity
-            android:name=".Contacts"
+            android:name=".Contact.Contacts"
             android:label="@string/title_activity_contacts"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
@@ -90,7 +90,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
-        <activity android:name=".Contacts_add"
+        <activity android:name=".Contact.ContactsAdd"
             android:label="Add Contact"
             >
 

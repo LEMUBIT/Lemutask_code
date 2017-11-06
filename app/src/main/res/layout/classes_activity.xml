@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="lemuel.charles.charl.lemutask.Classes">
+    tools:context="lemuel.charles.charl.lemutask.Lecture.Classes">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"

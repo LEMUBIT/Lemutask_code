@@ -13,12 +13,14 @@ import android.widget.Button;
 
 import java.util.Calendar;
 
+import lemuel.charles.charl.lemutask.SQLite.SqlHelperLemutask;
+
 /**
  * A simple {@link Fragment} subclass.
  */
 public class HomeFragment extends Fragment {
     View view;
-    sql_helper_lemutask sqlht;
+    SqlHelperLemutask sqlht;
     Button today_tsk, tomorrow_tsk, homew, proj;
     // TextView today,tommorow,hw,proj;
 
@@ -36,7 +38,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         //the sql_helper class object used to access the database objects
-        sqlht = new sql_helper_lemutask(getActivity());
+        sqlht = new SqlHelperLemutask(getActivity());
 
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_home, container, false);
@@ -71,7 +73,7 @@ public class HomeFragment extends Fragment {
                 .start();
         //end tomorrow task animation##############
 
-        //project task animation##############
+        //Project task animation##############
 
         getActivity().getWindowManager().getDefaultDisplay().getMetrics(dmetric);
         proj.setTranslationY(dmetric.heightPixels);
@@ -80,7 +82,7 @@ public class HomeFragment extends Fragment {
                 .setStartDelay(400)
                 .translationYBy(-dmetric.heightPixels)
                 .start();
-        //end project task animation##############
+        //end Project task animation##############
 
         //home work task animation##############
 

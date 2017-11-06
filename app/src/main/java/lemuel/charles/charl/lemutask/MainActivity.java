@@ -18,6 +18,15 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.DecelerateInterpolator;
 
+import lemuel.charles.charl.lemutask.Assignment.AssignmentAddInput;
+import lemuel.charles.charl.lemutask.Assignment.AssignmentMain;
+import lemuel.charles.charl.lemutask.Contact.Contacts;
+import lemuel.charles.charl.lemutask.Lecture.Classes;
+import lemuel.charles.charl.lemutask.Project.Project;
+import lemuel.charles.charl.lemutask.Project.ProjectMain;
+import lemuel.charles.charl.lemutask.Tasks.TabTodo;
+import lemuel.charles.charl.lemutask.Tasks.TodoInput;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -131,7 +140,7 @@ public class MainActivity extends AppCompatActivity
                 fabTodo.setClickable(false);
                 fabIdea.setClickable(false);
                 isOpen = false;
-                Intent inputtd = new Intent(MainActivity.this, todo_input.class);
+                Intent inputtd = new Intent(MainActivity.this, TodoInput.class);
                 startActivity(inputtd);
             }
         });
@@ -148,7 +157,7 @@ public class MainActivity extends AppCompatActivity
                 fabTodo.setClickable(false);
                 fabIdea.setClickable(false);
                 isOpen = false;
-                Intent proj = new Intent(MainActivity.this, project.class);
+                Intent proj = new Intent(MainActivity.this, Project.class);
                 startActivity(proj);
             }
         });
@@ -165,7 +174,7 @@ public class MainActivity extends AppCompatActivity
                 fabTodo.setClickable(false);
                 fabIdea.setClickable(false);
                 isOpen = false;
-                Intent inputhw = new Intent(MainActivity.this, assignment_add_input.class);
+                Intent inputhw = new Intent(MainActivity.this, AssignmentAddInput.class);
                 startActivity(inputhw);
             }
         });
@@ -240,7 +249,7 @@ public class MainActivity extends AppCompatActivity
         } //I folded the code block, expand to see the code
 
         if (id == R.id.todo) {
-            Intent t = new Intent(this, Tab_todo.class);
+            Intent t = new Intent(this, TabTodo.class);
             startActivity(t);
         }
         if (id == R.id.clas) {
@@ -248,12 +257,12 @@ public class MainActivity extends AppCompatActivity
             startActivity(t);
         }
         if (id == R.id.hw) {
-            Intent t = new Intent(this, assignment_main.class);
+            Intent t = new Intent(this, AssignmentMain.class);
             startActivity(t);
         }
 
         if (id == R.id.project) {
-            Intent t = new Intent(this, project_main.class);
+            Intent t = new Intent(this, ProjectMain.class);
             startActivity(t);
         }
 
